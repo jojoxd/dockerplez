@@ -1,5 +1,5 @@
 # Android development environment based on Ubuntu 14.04 LTS.
-# version 0.0.3
+# version 0.0.4
 
 # Start with Ubuntu 14.04 LTS.
 FROM phusion/baseimage
@@ -29,7 +29,8 @@ RUN mv android-sdk-linux /usr/local/android-sdk
 RUN rm android-sdk_r23-linux.tgz
 
 # Install Android tools
-RUN yes | /usr/local/android-sdk/tools/android update sdk --force --no-ui --all --filter android-23,android-22,tool,platform-tool,extra,addon-google_apis-google-19,addon-google_apis_x86-google-19,build-tools-19.1.0,build-tools-20.0.0,build-tools-21.1.2,build-tools-21.0.1,build-tools-23.0.1,build-tools-23.0.2,build-tools-23.0.3
+# doesn't work with yes | command
+RUN printf 'y\n%.s' {1..100} | /usr/local/android-sdk/tools/android update sdk --force --no-ui --all --filter android-23,android-22,tool,platform-tool,extra,addon-google_apis-google-19,addon-google_apis_x86-google-19,build-tools-19.1.0,build-tools-20.0.0,build-tools-21.1.2,build-tools-21.0.1,build-tools-23.0.1,build-tools-23.0.2,build-tools-23.0.3
 
 # Install Android NDK
 RUN wget https://dl.google.com/android/ndk/android-ndk-r9d-linux-x86_64.tar.bz2
