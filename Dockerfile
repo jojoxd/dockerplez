@@ -23,10 +23,10 @@ RUN apt-get update
 RUN apt-get -y install oracle-java7-installer
 
 # Install android sdk
-RUN wget http://dl.google.com/android/android-sdk_r23-linux.tgz
-RUN tar -xvzf android-sdk_r23-linux.tgz
+RUN wget https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
+RUN tar -xvzf android-sdk_r24.4.1-linux.tgz
 RUN mv android-sdk-linux /usr/local/android-sdk
-RUN rm android-sdk_r23-linux.tgz
+RUN rm android-sdk_r24.4.1-linux.tgz
 
 # Install Android tools
 # doesn't work with yes | command or echo "y" | command, it goes to quick, or runs only once, respectively
