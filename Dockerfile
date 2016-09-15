@@ -13,13 +13,13 @@ RUN echo "debconf shared/accepted-oracle-license-v1-1 seen true" | debconf-set-s
 RUN apt-get update
 RUN apt-get -y install software-properties-common python-software-properties bzip2 unzip openssh-client git lib32stdc++6 lib32z1 expect
 
-# Add oracle-jdk7 to repositories
+# Add oracle-jdk8 to repositories
 RUN add-apt-repository ppa:webupd8team/java
 
 # Update apt
 RUN apt-get update
 
-# Install oracle-jdk7
+# Install oracle-jdk8
 RUN apt-get -y install oracle-java8-installer
 
 # Install android sdk
@@ -55,4 +55,4 @@ ENV PATH $PATH:$ANDROID_NDK_HOME
 ENV PATH $PATH:$GRADLE_HOME/bin
 
 # Export JAVA_HOME variable
-ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
+ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
