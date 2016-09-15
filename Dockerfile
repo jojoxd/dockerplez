@@ -1,5 +1,5 @@
 # Android development environment based on Ubuntu 14.04 LTS.
-# version 0.0.10
+# version 0.0.11
 
 # Start with Ubuntu 14.04 LTS.
 FROM phusion/baseimage
@@ -30,7 +30,7 @@ RUN rm android-sdk_r23-linux.tgz
 
 # Install Android tools
 # doesn't work with yes | command or echo "y" | command, it goes to quick, or runs only once, respectively
-RUN (sleep 5 && while [ 1 ]; do sleep 5; echo y; done ) | /usr/local/android-sdk/tools/android update sdk --force --no-ui --all --filter android-23,android-22,tool,platform-tool,extra,addon-google_apis-google-19,addon-google_apis_x86-google-19,build-tools-24.0.0-preview,build-tools-23.0.3,build-tools-23.0.2,build-tools-23.0.1,build-tools-23.0.0,build-tools-22.0.1,build-tools-22.0.0,build-tools-21.1.2,build-tools-21.1.1,build-tools-21.1.0,build-tools-21.0.2,build-tools-21.0.1,build-tools-21.0.0,build-tools-20.0.0,build-tools-19.1.0,build-tools-19.0.3,build-tools-19.0.2,build-tools-19.0.1,build-tools-19.0.0,build-tools-18.1.1,build-tools-18.1.0,build-tools-18.0.1,build-tools-17.0.0
+RUN (sleep 5 && while [ 1 ]; do sleep 5; echo y; done ) | /usr/local/android-sdk/tools/android update sdk --force --no-ui --all --filter android-24,android-23,android-22,tool,platform-tool,extra,addon-google_apis-google-19,addon-google_apis_x86-google-19,build-tools-25.2.2,build-tools-24.0.3,build-tools-24.0.2,build-tools-24.0.1,build-tools-23.0.3,build-tools-23.0.2,build-tools-23.0.1,build-tools-23.0.0,build-tools-22.0.1,build-tools-22.0.0,build-tools-21.1.2,build-tools-21.1.1,build-tools-21.1.0,build-tools-21.0.2,build-tools-21.0.1,build-tools-21.0.0,build-tools-20.0.0,build-tools-19.1.0,build-tools-19.0.3,build-tools-19.0.2,build-tools-19.0.1,build-tools-19.0.0,build-tools-18.1.1,build-tools-18.1.0,build-tools-18.0.1,build-tools-17.0.0
 
 # Install Android NDK
 RUN wget https://dl.google.com/android/ndk/android-ndk-r9d-linux-x86_64.tar.bz2
