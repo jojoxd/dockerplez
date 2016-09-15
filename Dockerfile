@@ -1,5 +1,5 @@
 # Android development environment based on Ubuntu 14.04 LTS.
-# version 0.0.11
+# version 0.0.12
 
 # Start with Ubuntu 14.04 LTS.
 FROM phusion/baseimage
