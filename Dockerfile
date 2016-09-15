@@ -1,5 +1,5 @@
 # Android development environment based on Ubuntu 14.04 LTS.
-# version 0.0.12
+# version 0.0.13
 
 # Start with Ubuntu 14.04 LTS.
 FROM phusion/baseimage
@@ -20,7 +20,7 @@ RUN add-apt-repository ppa:webupd8team/java
 RUN apt-get update
 
 # Install oracle-jdk7
-RUN apt-get -y install oracle-java7-installer
+RUN apt-get -y install oracle-java8-installer
 
 # Install android sdk
 RUN wget https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
